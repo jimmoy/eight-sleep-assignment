@@ -9,6 +9,8 @@ import {
   View
 } from 'react-native'
 
+import { VictoryBar } from "victory-native"
+
 const styles = StyleSheet.create({
   root: {
     flex: 1,
@@ -46,4 +48,7 @@ export const HomeView  = ({ data, onClick }) =>
     <TouchableOpacity onPress={onClick}>
       <Text style={styles.button}>Button</Text>
     </TouchableOpacity>
+
+     <VictoryBar/>
+
   </View>

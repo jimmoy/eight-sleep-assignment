@@ -1,0 +1,36 @@
+{
+  "name": "EightSleep",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "storybook": "storybook start -p 7007"
+  },
+  "dependencies": {
+    "ramda": "^0.25.0",
+    "react": "16.3.1",
+    "react-native": "0.55.4",
+    "react-navigation": "^2.5.5",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "reselect": "^3.0.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-links": "^3.4.8",
+    "@storybook/addons": "^3.4.8",
+    "@storybook/react-native": "^3.4.8",
+    "babel-core": "^6.26.3",
+    "babel-jest": "23.2.0",
+    "babel-preset-react-native": "4.0.0",
+    "babel-runtime": "^6.26.0",
+    "jest": "23.2.0",
+    "prop-types": "^15.6.2",
+    "react-dom": "16.3.1",
+    "react-test-renderer": "16.3.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

@@ -1,0 +1,3 @@
+rootProject.name = 'EightSleep'
+
+include ':app'

@@ -1,0 +1,53 @@
+# OSX
+#
+.DS_Store
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+# Android/IJ
+#
+.idea
+.gradle
+local.properties
+
+# node.js
+#
+node_modules/*
+npm-debug.log
+yarn-error.log
+notes.org
+*.zip
+*.mobileprovision
+*.cer
+*.certSigningRequest
+*.p12
+
+release/*
+modules.tar.gz
+/android/app/fabric.properties
+/android/app/sourcemap.js
+/android.index.bundle
+
+/ios/bundle_*_ios.js
+/ios/sourcemap*_ios.js
+
+/android/bundle_*_android.js
+/android/sourcemap*_android.js

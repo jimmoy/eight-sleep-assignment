@@ -25,6 +25,8 @@ const styles = StyleSheet.create({
   },
   userContainer: {
     width: 300,
+    marginTop: 15,
+    marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
@@ -37,6 +39,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 16,
+    fontWeight: 'bold',
     textAlign: 'center',
     padding: 10,
   },
@@ -51,7 +54,7 @@ const styles = StyleSheet.create({
     // backgroundColor: '#ee8888',
     paddingTop: 20,
     paddingHorizontal: 20,
-    fontSize: 18,
+    fontSize: 16,
   },
   stagePieChart: {
     flexDirection: 'column',

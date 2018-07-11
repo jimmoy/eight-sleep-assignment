@@ -1,6 +1,7 @@
 // HomeScreen.js
 
 import React from 'react'
+import { LayoutAnimation } from 'react-native'
 import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
 import { map, merge, path, prop, reduce } from 'ramda'
@@ -113,7 +114,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       fetchData('joe', dispatch)
     },
     setCurrentUser: (user) => {
-      dispatch(appCurrentUser(user));
+      LayoutAnimation.easeInEaseOut()
+      dispatch(appCurrentUser(user))
     },
   }
 }

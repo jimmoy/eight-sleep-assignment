@@ -24,7 +24,7 @@ import {
 } from '../actions'
 
 export const initialState = {
-  data: {},
+  users: {},
 }
 
 export const networkReducer = (state = initialState, action) => {

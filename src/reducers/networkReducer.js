@@ -9,16 +9,12 @@
 //     response: {
 //       response_code: 0,
 //       results: [
-//         { category: "...", question: "..." },
-//         { category: "...", question: "..." },
-//         ...
+//         { jim: { intervals: ... }}
+//         { john: { intervals: ... }}
+//         { joe: { intervals: ... }}
 //       ]
 //     }
 //   }
-//
-// In more complex API situations, there would be other entries
-// in the state tree such as network/profile, network/saved, other
-// things dictated by the semantics of the API.
 
 import { mergeDeepRight, path } from 'ramda'
 
@@ -40,9 +36,11 @@ export const networkReducer = (state = initialState, action) => {
       // Nothing but the message, indicating the network
       // request has been made and now we're waiting
       return mergeDeepRight(state, {
-        data: {
-          status: 'request'
-        }
+        users: {
+          [action.user]: {
+            status: 'request'
+          }
+        },
       })
     case NETWORK_DATA_COMPLETE: {
       // Fields in this message are: {
@@ -54,17 +52,16 @@ export const networkReducer = (state = initialState, action) => {
       // going to be interpreted as I go since the API is not
       // strictly defined.
       const resp = path(['response'], action)
-      const code = path(['response', 'response_code'], action)
-      const arr = path(['response', 'results'], action)
-      if (resp && (code === 0) && arr && (arr.length > 0)) {
+      const arr = path(['response', 'intervals'], action)
+      if (resp && arr && (arr.length > 0)) {
         // Reality check done on network response says we're "go"
-        // I could probably check on things like 'category' and
-        // 'question' but I'll wait and see if there are irregularities
-        // in the responses.
+        // I could probably check on things like presence of timeseries
         return mergeDeepRight(state, {
-          data: {
-            status: 'complete',
-            response: resp,
+          users: {
+            [action.user]: {
+              status: 'complete',
+              response: resp,
+            }
           }
         })
       } else {
